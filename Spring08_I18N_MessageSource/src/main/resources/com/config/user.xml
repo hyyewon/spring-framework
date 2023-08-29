@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- *.properties로 확장자가 똑같지만, 사용하는 용도가 다르기 때문에 이에 따라 다른 빈을 등록해야 함 -->
+	<!-- shop_ko.properties와 shop_en.properties 등록 -->
+
+	<!-- id값이 정해져 있음 (The bean must have the name messageSource) -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:com/config/shop" /> <!-- value에 파일명만 명시 -->
+
+		<!-- properties파일을 utf-8로 저장한 경우에 사용 -->
+		<property name="defaultEncoding" value="utf-8" /> <!-- messageSource가 인식하고 있는 기본인코딩값 변경 -->
+	</bean>
+	
+	<!-- UserService 등록 -->
+	<bean id="service" class="com.service.UserService" />
+
+</beans>

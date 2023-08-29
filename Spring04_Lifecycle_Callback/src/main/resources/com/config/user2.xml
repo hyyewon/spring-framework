@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 빈 생성 / 소멸시 콜백함수 호출 -->
+<!-- UserService2가 implements를 받아 동작 -->
+	<bean id="service" class="com.service.UserService2" />
+
+</beans>
