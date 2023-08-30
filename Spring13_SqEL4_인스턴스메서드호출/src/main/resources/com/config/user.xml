@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<bean id="p1" class="com.dto.Person">
+		<!-- ? 기능은 xxx() 호출시 null인 경우에 toUpperCase()호출 안함. -->
+		<property name="username" value="#{p1.xxx()?.toUpperCase()}" /> <!-- ?:리턴값이 null이 아니면 호출 -->
+		<property name="age" value="27" />
+		<property name="married" value="false" />
+		<property name="height" value="161.4" />
+	</bean>
+
+	<bean id="p3" class="com.dto.Person">
+		<property name="username"
+			value="#{p1.xxx()?.toUpperCase()?.substring(0,4)}" /> <!-- 메서드 리턴값이 문자열 -->
+		<property name="age" value="27" />
+		<property name="married" value="false" />
+		<property name="height" value="161.4" />
+	</bean>
+
+	<bean id="p2" class="com.dto.Person">
+		<property name="username" value="#{p1.xxx()}" /> <!-- Person을 참조해야 메서드 호출 가능 -->
+		<property name="age" value="27" />
+		<property name="married" value="false" />
+		<property name="height" value="161.4" />
+	</bean>
+
+</beans>
