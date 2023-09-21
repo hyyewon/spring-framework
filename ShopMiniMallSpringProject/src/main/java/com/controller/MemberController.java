@@ -60,6 +60,6 @@ public class MemberController {
 		if(dto!=null) {
 			mesg = "아이디 중복";
 		}
-		return mesg;
+		return mesg; //해당 메시지를 돌려줌
 	}
 }

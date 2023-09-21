@@ -21,6 +21,7 @@
 	<mvc:resources location="/WEB-INF/css/" mapping="/css/**" />
 	
 	<!-- interceptor 경로 지정 -->
+	<!-- 퀘스트1. 패턴화로 단일화하기 -->
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/MyPageServlet"/>
@@ -32,6 +33,30 @@
 		</mvc:interceptor>
 		<mvc:interceptor>
 			<mvc:mapping path="/CartAddServlet"/>
+				<ref bean="xxx" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/CartListServlet"/>
+				<ref bean="xxx" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/CartUpdateServlet"/>
+				<ref bean="xxx" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/CartDeleteServlet"/>
+				<ref bean="xxx" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/CartDeleteAllServlet"/>
+				<ref bean="xxx" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/OrderConfirmServlet"/>
+				<ref bean="xxx" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/OrderDoneServlet"/>
 				<ref bean="xxx" />
 		</mvc:interceptor>
 	</mvc:interceptors>
